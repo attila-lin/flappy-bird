@@ -98,7 +98,7 @@ end
 function love.draw()
 
    -- background (necessary)
-   love.graphics.drawq(bgimg,quad0,0,0)
+   love.graphics.draw(bgimg,quad0,0,0)
    
 
    if gamestate == "menu" or gamestate == "options" then
@@ -115,13 +115,13 @@ function love.draw()
 
    -- ground
    if fly == 0 then
-      love.graphics.drawq(gdimg,quad2,0,1280/2-140, 0, 1, 1, 0, 0)
+      love.graphics.draw(gdimg,quad2,0,1280/2-140, 0, 1, 1, 0, 0)
    elseif fly == 1 then
-      love.graphics.drawq(gdimg,quad2,0,1280/2-140, 0, 1, 1, 5, 0)
+      love.graphics.draw(gdimg,quad2,0,1280/2-140, 0, 1, 1, 5, 0)
    elseif fly == 2 then
-      love.graphics.drawq(gdimg,quad2,0,1280/2-140, 0, 1, 1, 10, 0)
+      love.graphics.draw(gdimg,quad2,0,1280/2-140, 0, 1, 1, 10, 0)
    elseif fly == 3 then
-      love.graphics.drawq(gdimg,quad2,0,1280/2-140, 0, 1, 1, 15, 0)
+      love.graphics.draw(gdimg,quad2,0,1280/2-140, 0, 1, 1, 15, 0)
    end
 
    
