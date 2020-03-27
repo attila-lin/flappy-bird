@@ -37,8 +37,8 @@ function game_draw()
 	if ready == 1 then
 		first = first + 10 -- move speed
 		for i=1,200 do
-			love.graphics.drawq(image, quad_holdback2, gamewidth - first + (i-1) * 180, tbl[i] - 190, 0, 1, 1, 0, 0)
-		  	love.graphics.drawq(image, quad_holdback1, gamewidth - first + (i-1) * 180, tbl[i] + 200, 0, 1, 1, 0, 0)
+			love.graphics.draw(image, quad_holdback2, gamewidth - first + (i-1) * 180, tbl[i] - 190, 0, 1, 1, 0, 0)
+		  	love.graphics.draw(image, quad_holdback1, gamewidth - first + (i-1) * 180, tbl[i] + 200, 0, 1, 1, 0, 0)
 		end
 	end
 
@@ -84,24 +84,24 @@ function game_draw()
 	if ready == 0 then
 		
 		-- get ready
-		love.graphics.drawq(image,quadgetready,gamewidth/2-508/6,gameheight/3.5)
+		love.graphics.draw(image,quadgetready,gamewidth/2-508/6,gameheight/3.5)
 		-- click
-		love.graphics.drawq(image,quadclick,gamewidth/2-286/6,gameheight/2.5)
+		love.graphics.draw(image,quadclick,gamewidth/2-286/6,gameheight/2.5)
 
 		if(fly == 0) then
 			posY = iniY - 3
-			love.graphics.drawq(image,quadbird2, posX, posY)
+			love.graphics.draw(image,quadbird2, posX, posY)
 		end
 		if(fly == 1) then
-			love.graphics.drawq(image,quadbird1, posX, posY)
+			love.graphics.draw(image,quadbird1, posX, posY)
 			
 		end
 		if(fly == 2) then
 			posY = iniY + 3
-			love.graphics.drawq(image,quadbird3, posX, posY)
+			love.graphics.draw(image,quadbird3, posX, posY)
 		end
 		if(fly == 3) then
-			love.graphics.drawq(image,quadbird1, posX, posY)
+			love.graphics.draw(image,quadbird1, posX, posY)
 		end
 		love.timer.sleep( 0.1 )
 
@@ -119,16 +119,16 @@ function game_draw()
 		end
 
 		if(fly == 0) then
-			love.graphics.drawq(image,quadbird2, posX, posY, direct)
+			love.graphics.draw(image,quadbird2, posX, posY, direct)
 		end
 		if(fly == 1) then
-			love.graphics.drawq(image,quadbird1, posX, posY, direct)
+			love.graphics.draw(image,quadbird1, posX, posY, direct)
 		end
 		if(fly == 2) then
-			love.graphics.drawq(image,quadbird3, posX, posY, direct)
+			love.graphics.draw(image,quadbird3, posX, posY, direct)
 		end
 		if(fly == 3) then
-			love.graphics.drawq(image,quadbird1, posX, posY, direct)
+			love.graphics.draw(image,quadbird1, posX, posY, direct)
 		end
 
 
@@ -143,10 +143,10 @@ function game_draw()
 		-- print(len)
 		sc = score
 		if sc == 0 then
-			love.graphics.drawq(image,quad_num[0],gamewidth/2-55/6,gameheight/5)
+			love.graphics.draw(image,quad_num[0],gamewidth/2-55/6,gameheight/5)
 		end
 		while sc ~= 0 do
-			love.graphics.drawq(image,quad_num[sc % 10],gamewidth/2 + len * 68 / 3 - 55/6, gameheight/5)
+			love.graphics.draw(image,quad_num[sc % 10],gamewidth/2 + len * 68 / 3 - 55/6, gameheight/5)
 			sc = math.floor(sc / 10)
 			len = len - 1
 		end
